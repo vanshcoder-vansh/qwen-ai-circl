@@ -1,0 +1,111 @@
+/* ============================================
+   FORGE AI OS - BASE STYLES
+   Tailwind CSS v4 compatible
+   ============================================ */
+
+@import "tailwindcss";
+
+/* ============================================
+   CUSTOM THEME PROPERTIES
+   ============================================ */
+
+:root {
+  /* Light Mode (Default) Colors */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #FAFAFA;
+  --color-bg-tertiary: #F5F5F5;
+  
+  --color-surface-card: #FFFFFF;
+  --color-surface-sidebar: #FCFCFC;
+  
+  --color-text-primary: #0A0A0A;
+  --color-text-secondary: #525252;
+  --color-text-muted: #737373;
+  --color-text-disabled: #A3A3A3;
+  
+  --color-border-light: #E5E5E5;
+  --color-border-medium: #D4D4D4;
+  --color-border-strong: #A3A3A3;
+  
+  /* Brand Accent Colors */
+  --color-ai-blue: #3B82F6;
+  --color-ai-purple: #8B5CF6;
+  --color-ai-cyan: #06B6D4;
+  
+  /* Semantic Colors */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #0EA5E9;
+}
+
+.dark {
+  /* Dark Mode Colors */
+  --color-bg-primary: #09090B;
+  --color-bg-secondary: #111113;
+  --color-bg-tertiary: #18181B;
+  
+  --color-surface-card: #18181B;
+  --color-surface-sidebar: #121214;
+  
+  --color-text-primary: #FAFAFA;
+  --color-text-secondary: #D4D4D8;
+  --color-text-muted: #A1A1AA;
+  --color-text-disabled: #71717A;
+  
+  --color-border-light: #27272A;
+  --color-border-medium: #3F3F46;
+  --color-border-strong: #52525B;
+}
+
+/* ============================================
+   BASE RESET & DEFAULTS
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-ai-blue);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--color-bg-secondary); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--color-border-medium); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-border-strong); }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
